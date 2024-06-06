@@ -1,5 +1,7 @@
 // 重置样式
 * {
+  //border-box内外边距边框抢占内容区 如：100px需减去内外边距边框得出内容区 内减
+  //content-box 内外边距边框额外计算 如：内容区100px需加上内外边距边框
   box-sizing: border-box;
 }
 
@@ -41,13 +43,13 @@ input[type='checkbox'] {
   padding: 0;
   outline: none;
   border: none;
-  -webkit-appearance: none;
-  &::placeholder {
+  -webkit-appearance: none;//不懂
+  &::placeholder {//不懂
     color: #ccc;
   }
 }
 img {
-  max-width: 100%;
+  max-width: 100%;//限制图片尺寸不超过父容器的宽高。
   max-height: 100%;
   vertical-align: middle;
   background: #ebebeb url('../assets/images/200.png') no-repeat center / contain;
@@ -66,6 +68,7 @@ ul {
   margin: 0 auto;
   position: relative;
 }
+//文本溢出处理
 .ellipsis {
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -89,9 +92,10 @@ ul {
   float: right;
 }
 
+//设置浮动导致元素脱离文档流->清除浮动（BFC）
 .clearfix:after {
   content: '.';
-  display: block;
+  display: block;//为了清除浮动新增的元素必须是块级元素
   visibility: hidden;
   height: 0;
   line-height: 0;

@@ -10,6 +10,8 @@ export default defineConfig({
     plugins: [
         vue(),
         AutoImport({
+            //自动导入，定义以后文件中类似import {defineStore} from "pinia";的语句可省略
+            imports:["vue","vue-router","pinia"],
             resolvers: [ElementPlusResolver()],
         }),
         Components({
